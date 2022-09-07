@@ -1,9 +1,8 @@
 // PROGRAMGame Rock/Paper/Scissors
 // Ask the user to imput Rock Paper Scissors
     function userInfo() {
-        let userChoice = document.getElementById("userInput").value;
+        let userChoice = document.getElementById("userForm").value; //userInput is the field that I am extracting the information
         console.log(userChoice)
-        alert(userChoice)
         return userChoice;
     }
     
