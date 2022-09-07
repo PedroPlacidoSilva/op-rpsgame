@@ -11,12 +11,17 @@
     </head>
     <body>
         <h1>Rock Paper Scissors Game</h1>
-        <form id="userForm">
-            <label for="userImput">What is your option?</label>
-            <input type="text" id="userInput" name="userInput" placeholder="Rock, Paper or Scissors">
-            
-        </form>
-            <button type="button" form="userInput" onclick="userInfo();" value="Submit Option">Submit Option</button>
+        
+        <label for="userForm">Choose an option and good luck!</label>
+        <select name="userForm" id="userForm">
+            <option value="Rock">Rock</option>
+            <option value="Paper">Paper</option>
+            <option value="Scissors">Scissors</option>
+        </select>
+
+        <button type="button" form="userForm" onclick="userInfo()" value="Submit Option">Submit Option</button>
         <script src="script.js" async defer></script>
+        
+        
     </body>
 </html>
