@@ -11,12 +11,12 @@
     </head>
     <body>
         <h1>Rock Paper Scissors Game</h1>
-        <form>
-            <label for="userImput">What is Your option?</label>
-            <input type="text" id="userImput" name="userImput" placeholder="Rock, Paper or Scissors">
-            <input type="submit" id="buttonInput" value="Submit Option">
+        <form id="userForm">
+            <label for="userImput">What is your option?</label>
+            <input type="text" id="userInput" name="userInput" placeholder="Rock, Paper or Scissors">
+            
         </form>
-        
+            <button type="button" form="userInput" onclick="userInfo();" value="Submit Option">Submit Option</button>
         <script src="script.js" async defer></script>
     </body>
 </html>
