@@ -6,14 +6,14 @@ body {
   background-color: #1f2937;
 }
 
+.containerPic {
+  margin: 20px;
+  border: 10px solid red;
+}
+
 img {
-  border: 10px solid #eb0d0d;
-  width: 200px;
-  height: 200px;
-  padding-left: 50px;
-  padding-right: 50px;
-  margin: 40px;
-  border-radius: 10px;
+  width: 150px;
+  height: 150px;
   background-color: whitesmoke;
 }
 
