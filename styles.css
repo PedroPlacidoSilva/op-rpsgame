@@ -25,7 +25,10 @@ img {
   padding: 10px 50px 40px 50px;
 }
 
-.intro {
+.intro,
+.score,
+.scores,
+#opponentChoice {
   color: white;
   text-align: center;
   font-size: 22px;
@@ -37,4 +40,9 @@ img {
   flex-wrap: wrap;
   padding: 20px 20px 20px 20px;
   border-color: white;
+}
+
+.score {
+  font-size: 30px;
+  font-weight: 600;
 }
