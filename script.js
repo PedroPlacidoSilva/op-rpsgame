@@ -86,7 +86,7 @@ buttons.forEach((button) => {
       if (computerScore == 5) {
         messageWinner = "You Lose! Better Luck Next Time";
       } else {
-        messageWinner = "You area the Winner";
+        messageWinner = "You are the Winner";
       }
       // Updates the screen with the winner result
       document.getElementById("winner").innerHTML = messageWinner;
@@ -100,6 +100,9 @@ buttons.forEach((button) => {
         document.getElementById("opponPlayer").innerHTML = computerScore;
         document.getElementById("scorePlayer").innerHTML = playerScore;
         document.getElementById("tie").innerHTML = tie;
+        document.getElementById(
+          "opponentChoice"
+        ).innerHTML = `Opponent Selection: ${""}`;
       }, "3000");
     }
   });
