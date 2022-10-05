@@ -28,6 +28,7 @@ img {
 .intro,
 .score,
 .scores,
+#winner,
 #opponentChoice {
   color: white;
   text-align: center;
@@ -45,4 +46,9 @@ img {
 .score {
   font-size: 30px;
   font-weight: 600;
+}
+
+#winner {
+  font-size: 50px;
+  font-weight: 800;
 }

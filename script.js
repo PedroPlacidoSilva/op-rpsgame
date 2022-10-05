@@ -39,18 +39,15 @@ function playerRound(playerSelection, computerSelection) {
   }
 }
 
-function game ()
-
-
-
-
-
-
-
 // Selects all buttons and stores on variable buttons
 const buttons = document.querySelectorAll("button");
 console.log(buttons);
 // Event listener to every button returning the id atribute of the clicked button and Store in Player Selection variable
+let computerScore = 0;
+let tie = 0;
+let playerScore = 0;
+
+// Select the option of the player and store in Variable
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     if (button.id === "btnR") {
@@ -66,63 +63,44 @@ buttons.forEach((button) => {
     document.getElementById(
       "opponentChoice"
     ).innerHTML = `Opponent Selection: ${computerSelection}`;
+
+    // Play round to see who wins the round. Store in variable
+    let winner = playerRound(playerSelection, computerSelection);
+
+    // Updates the scores of all players and ties.
+    if (winner[1] == "Opponent") {
+      computerScore += 1;
+      document.getElementById("opponPlayer").innerHTML = computerScore;
+    } else if (winner[1] == "Tie") {
+      tie += 1;
+      document.getElementById("tie").innerHTML = tie;
+    } else if (winner[1] == "Player") {
+      playerScore += 1;
+      document.getElementById("scorePlayer").innerHTML = playerScore;
+    }
+
+    //Checks if all rounds have been played and presents a message to the winner
+    //Defined that the winner is the one that wins 5 rounds faster
+    if (computerScore == 5 || playerScore == 5) {
+      let messageWinner;
+      if (computerScore == 5) {
+        messageWinner = "You Lose! Better Luck Next Time";
+      } else {
+        messageWinner = "You area the Winner";
+      }
+      // Updates the screen with the winner result
+      document.getElementById("winner").innerHTML = messageWinner;
+      computerScore = 0;
+      playerScore = 0;
+      tie = 0;
+      // After 3 seconds the message with the winner is erased from the screnn
+      // The Scores are updated do 0
+      setTimeout(() => {
+        document.getElementById("winner").innerHTML = "";
+        document.getElementById("opponPlayer").innerHTML = computerScore;
+        document.getElementById("scorePlayer").innerHTML = playerScore;
+        document.getElementById("tie").innerHTML = tie;
+      }, "3000");
+    }
   });
-
 });
-
-
-//********* Falta integrar função game
-
-
-
-// Play the game
-
-// function game() {
-//     // LOOP 5 times
-//         //Ask the user for input
-//         //Obtain computer random choice
-//         //Verify if it is winner
-//         //Show alerts in every round to update about who won the round and updated scores
-
-//         let playerScore = 0;
-//         let computerScore = 0;
-//         let tie = 0;
-//     for (let i = 0; i < 5; i++) {
-//         // Ask user for information and store in variable with UpperCase
-//         let player1 = prompt("What is your option?: Rock, Paper or Scissors");
-//         playerSelection = player1.toUpperCase();
-//         // Random choice by the PC and store in variable with Uppercase
-//         let computerSelection = getComputerChoice();
-
-//         // IF user imput is valid or if the user wants to quit
-
-//         if (playerSelection == "QUIT") {
-//              break;
-
-//         } else if (playerSelection == "ROCK" || playerSelection == "PAPER" || playerSelection == "SCISSORS") {
-//             let winner = playerRound(playerSelection,computerSelection);
-//             console.log("winner is" + winner)
-
-//             // Checks and updates the scores
-//             if (winner[1] == "Opponent") {
-//                 computerScore +=1;
-
-//             } else if (winner[1] == "Tie") {
-//                 tie +=1;
-
-//             } else if (winner[1] == "Player") {
-//                 playerScore +=1;
-
-//             }
-//             alert(`${winner[0]}. Your Score:${playerScore}; Oponnent Score:${computerScore}; Tie:${tie} `)
-
-//         } else {
-//             alert("Your option is not valid! Try again or write quit.");
-//             i-- //decreases the counter by 1 so that this trial does not count
-//         }
-
-//     }
-
-// }
-
-// game()
